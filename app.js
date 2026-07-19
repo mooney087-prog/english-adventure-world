@@ -108,9 +108,7 @@ function loadLevel(index){
 function currentTarget(){return levels[levelIndex].words[targetIndex];}
 function setTarget(i){
   targetIndex=i;
-  objectEls.forEach(el=>el.classList.remove("target"));
   if(i<5){
-    objectEls[i].classList.add("target");
     const t=currentTarget();
     $("#currentMission").textContent=`Pick up ${t.w}.`;
     $("#currentMissionThai").textContent=`เก็บ${t.th}`;
@@ -143,7 +141,7 @@ function checkNearby(){
     $("#message").textContent=`Press PICK UP: ${item.w}`;
   }else{
     nearby=null;
-    $("#message").textContent=targetIndex<5?"Find the glowing word.":"Go to the golden gate!";
+    $("#message").textContent=targetIndex<5?"Listen carefully and find the correct word.":"Go to the golden gate!";
   }
 }
 function doAction(){
@@ -168,7 +166,7 @@ function collectCurrent(){
   const idx=Number(nearby.dataset.index),item=levels[levelIndex].words[idx];
   if(idx!==targetIndex)return;
   nearByCollectEffect(item);
-  nearby.classList.add("collected");nearby.classList.remove("target");
+  nearby.classList.add("collected");
   collected.push(item);$("#wordDialog").close();nearby=null;
   renderBag();updateProgress();
   targetIndex++;

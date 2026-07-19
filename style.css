@@ -33,8 +33,8 @@ footer{padding:18px 0 0;color:#63788c;font-weight:800}
 .world.theme-city{background:linear-gradient(#9cddff 0 48%,#9b9fa8 48%)}
 .scene-label{position:absolute;left:14px;top:14px;z-index:4;padding:8px 13px;border-radius:999px;background:#ffffffdd;color:#155ac8;font-weight:900}
 .object-item{position:absolute;z-index:8;min-width:76px;min-height:76px;padding:6px;border-radius:18px;background:#ffffffdc;border:4px solid white;box-shadow:0 8px 18px #0003;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;justify-content:center}
-.object-item .emoji{font-size:38px}.object-item .label{font-weight:900;font-size:13px;color:#17446e}.object-item.target{outline:8px solid #ffe34f;animation:pulse 1s infinite}.object-item.collected{opacity:.18;pointer-events:none;filter:grayscale(1)}
-@keyframes pulse{50%{transform:translate(-50%,-50%) scale(1.08)}}
+.object-item .emoji{font-size:38px}.object-item .label{font-weight:900;font-size:13px;color:#17446e}.object-item.collected{opacity:.18;pointer-events:none;filter:grayscale(1)}
+}
 .player{position:absolute;z-index:15;left:50%;top:82%;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#ffffffdd;border:4px solid #1767e8;font-size:36px;transform:translate(-50%,-50%);transition:left .16s linear,top .16s linear;box-shadow:0 7px 16px #0003}
 .goal-gate{position:absolute;right:3%;top:42%;z-index:10;width:95px;height:110px;border-radius:18px;background:linear-gradient(#f7d64a,#e7a823);border:6px solid #fff;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 10px 25px #0003}
 .goal-gate span{font-size:44px}.goal-gate b{font-size:12px}.goal-gate.locked{filter:grayscale(.85)}
