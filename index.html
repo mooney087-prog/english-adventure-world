@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no" />
+  <meta name="theme-color" content="#1668d8" />
+  <title>English Adventure World</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main id="app">
+
+  <section id="homeScreen" class="screen active">
+    <div class="home-card">
+      <img src="assets/app-icon.png" class="app-icon" alt="English Adventure World" />
+      <span class="badge">Explore • Listen • Collect • Win</span>
+      <h1>English Adventure World</h1>
+      <p class="thai-title">ผจญภัยสะสมคำศัพท์ภาษาอังกฤษ 5 ด่าน</p>
+
+      <div class="level-preview">
+        <div><b>1</b><span>Colors</span><small>สี</small></div>
+        <div><b>2</b><span>Classroom Objects</span><small>สิ่งของในห้องเรียน</small></div>
+        <div><b>3</b><span>Kitchen</span><small>ห้องครัว</small></div>
+        <div><b>4</b><span>Places in School</span><small>สถานที่ในโรงเรียน</small></div>
+        <div><b>5</b><span>Places in the City</span><small>สถานที่ในเมือง</small></div>
+      </div>
+
+      <button id="startBtn" class="primary big">▶ Start Adventure</button>
+      <button id="howBtn" class="secondary">❔ How to Play</button>
+      <footer>Created by Wongduen</footer>
+    </div>
+  </section>
+
+  <section id="gameScreen" class="screen">
+    <header class="hud">
+      <button id="homeBtn" class="hud-btn" aria-label="Home">🏠</button>
+      <div class="hud-title">
+        <strong id="levelTitle">Level 1: Colors</strong>
+        <small id="missionText">Collect all 5 words.</small>
+      </div>
+      <div class="hud-stats">
+        <span>⭐ <b id="stars">0</b>/5</span>
+        <span>🏁 <b id="levelNo">1</b>/5</span>
+      </div>
+    </header>
+
+    <section class="game-shell">
+      <div id="world" class="world">
+        <div id="sceneLabel" class="scene-label">Color Garden</div>
+        <div id="goalGate" class="goal-gate locked">
+          <span>🏰</span><b id="gateText">LOCKED</b>
+        </div>
+        <div id="player" class="player"><span>🧒</span></div>
+        <div id="missionBubble" class="mission-bubble">
+          <button id="repeatMissionBtn">🔊</button>
+          <div>
+            <small>Mission</small>
+            <strong id="currentMission">Pick up red.</strong>
+            <span id="currentMissionThai">เก็บสีแดง</span>
+          </div>
+        </div>
+        <div id="message" class="world-message">Use the arrows to move.</div>
+      </div>
+
+      <aside class="side-panel">
+        <h2>Vocabulary Bag 🎒</h2>
+        <div id="wordBag" class="word-bag"></div>
+        <div class="progress-label"><span>Level progress</span><b id="progressText">0/5</b></div>
+        <div class="progress"><div id="progressBar"></div></div>
+        <button id="restartLevelBtn">🔄 Restart Level</button>
+      </aside>
+    </section>
+
+    <div class="mobile-controls">
+      <button class="move up" data-dir="up">▲</button>
+      <button class="move left" data-dir="left">◀</button>
+      <button class="move action" id="actionBtn">PICK UP</button>
+      <button class="move right" data-dir="right">▶</button>
+      <button class="move down" data-dir="down">▼</button>
+    </div>
+  </section>
+
+  <dialog id="wordDialog">
+    <div id="dialogEmoji" class="dialog-emoji">🔴</div>
+    <p class="dialog-label">Vocabulary</p>
+    <h2 id="dialogWord">red</h2>
+    <p id="dialogThai">สีแดง</p>
+    <p id="dialogCommand" class="command">Pick up red.</p>
+    <button id="listenWordBtn">🔊 Listen Again</button>
+    <button id="collectWordBtn" class="primary">⭐ Pick Up</button>
+  </dialog>
+
+  <dialog id="levelDialog">
+    <div class="trophy">⭐</div>
+    <h2 id="levelCompleteTitle">Level Complete!</h2>
+    <p id="levelCompleteText">You collected all the words.</p>
+    <button id="nextLevelBtn" class="primary">Next Level ▶</button>
+  </dialog>
+
+  <dialog id="finishDialog">
+    <div class="trophy">🏆</div>
+    <h2>Adventure Complete!</h2>
+    <p>You collected all 25 vocabulary words!</p>
+    <div id="finalSummary" class="final-summary"></div>
+    <button id="playAgainBtn" class="primary">Play Again</button>
+    <button id="finishHomeBtn">Home</button>
+  </dialog>
+
+  <dialog id="howDialog">
+    <h2>How to Play</h2>
+    <p>1. ฟังคำสั่ง เช่น <b>“Pick up red.”</b></p>
+    <p>2. ใช้ปุ่มลูกศรเดินไปหาคำศัพท์ที่ถูกต้อง</p>
+    <p>3. เมื่ออยู่ใกล้คำศัพท์ ให้กด <b>PICK UP</b></p>
+    <p>4. เก็บครบ 5 คำเพื่อเปิดประตูไปด่านต่อไป</p>
+    <button id="closeHowBtn" class="primary">เข้าใจแล้ว</button>
+  </dialog>
+
+</main>
+<script src="app.js"></script>
+</body>
+</html>
